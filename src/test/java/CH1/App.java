@@ -1,4 +1,4 @@
-package BASE;
+package CH1;
 
 import java.util.Scanner;
 
@@ -36,14 +36,21 @@ public class App
 
         String input = prog.getInput();
 
-        System.out.println(input +" has "+ input.length() +" characters.");
+        System.out.println(input + " has " + input.length() + " characters.");
 
     }
 
     private String getInput()
     {
+        String input = "";
         System.out.print("What is the input string? ");
-        String input = in.nextLine();
+        while (input.isEmpty()) {
+            input = in.nextLine();
+            if(input.isEmpty())
+            {
+                System.out.print("Your string was empty, please type the input string. ");
+            }
+        }
         return input;
     }
 
